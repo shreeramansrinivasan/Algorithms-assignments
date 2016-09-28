@@ -7,9 +7,17 @@ def Dijkstra(graph,source_vertex):
 	#sets for keeping track of visited and un-visited verticesy
 	setX=source_vertex;
 	setV=[graph[i][0] for i in range(len(graph))]
+	array=list();#array of all distances from each vertex
+	min_array=list();#min dist array from all the vertices
 	while setX!=setV:
 		#step 1: Try to find the list of edges radiating from setX  to setV-setX
-			
+		for vertices in setX:
+			#Parse through all edges and compute the minimum distance 
+			for i in range(1,len(graph[vertices]),2):#need to parse only the odd indices
+				if !setX.__contains__(graph[vertices][i]):#the vertex has not been visited
+							
+				
+						
 
 
 
