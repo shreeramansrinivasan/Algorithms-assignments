@@ -22,11 +22,12 @@ def Dijkstra(graph,source_vertex):
 				if not(setX.__contains__(graph[vertices-1][i])):#the vertex has not been visited
 					array.append(dist[vertices-1]+graph[vertices-1][i+1])#add the distance 
 					vertex_list.append(graph[vertices-1][i])#append the vertex
-			print array
+			#print array
 			min_array.append(min(array))#find minimum distance for edges radiating from each vertex
 			min_dist_vertex_list.append(vertex_list[array.index(min(array))])#Keep track of the vertex who has a minimum length edge with another vertex in setX
 		#figure out which out of all of them is the minimum
 		temp=min(min_array)
+		#print min_dist_vertex_list[min_array.index(temp)]
 		dist[min_dist_vertex_list[min_array.index(temp)]-1]=temp#update the distance vector 
 		#update the set X 
 		setX.add(min_dist_vertex_list[min_array.index(temp)])
@@ -51,14 +52,22 @@ def Dijkstra(graph,source_vertex):
 
 
 
-graph=[re.split(',|\t|\s',line.strip()) for line in open('test_dijkstra.txt')];
+graph=[re.split(',|\t|\s',line.strip()) for line in open('Dijkstradata.txt')];
 
 graph=[map(int,graph[i]) for i in range(len(graph)-1)];
 #print graph
 s_vertex=1;
 distance=Dijkstra(graph,s_vertex)	
-print distance
-
+print distance[7-1]
+print distance[37-1]
+print distance[59-1]
+print distance[82-1]
+print distance[99-1]
+print distance[115-1]
+print distance[133-1]
+print distance[165-1]
+print distance[188-1]
+print distance[197-1]
 
 
 
